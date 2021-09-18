@@ -1,6 +1,6 @@
 describe("NFTMarket", function () {
   it("Should create and execute market sales", async function () {
-    const Market = await ethers.getContractFactory("NFTMarket");
+    const Market = await ethers.getContractFactory("Market");
     const market = await Market.deploy();
     await market.deployed();
     const marketAddress = market.address;
@@ -37,7 +37,7 @@ describe("NFTMarket", function () {
         const tokenUri = await nft.tokenURI(i.tokenId);
         let item = {
           price: i.price.toString(),
-          tokenId: i.price.toString(),
+          tokenId: i.tokenId.toString(),
           seller: i.seller,
           owner: i.owner,
           tokenUri,
