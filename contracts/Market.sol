@@ -69,6 +69,8 @@ contract Market is ReentrancyGuard {
       false
     );
 
+    // transfer ownership to
+   
     IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
 
     emit MarketItemCreated(
@@ -113,7 +115,7 @@ contract Market is ReentrancyGuard {
         MarketItem storage currentItem = idToMarketItem[currentId];
         items[currentIndex] = currentItem;
         currentIndex += 1;
-      }
+      }    
     }
     return items;
   }
